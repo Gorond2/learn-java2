@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.box.Box;
+import org.example.box.IncorrectBoxDimensionsException;
 import org.example.transport.Plane;
 import org.example.transport.Ship;
 import org.example.database.Document;
@@ -95,6 +97,27 @@ public class App
 
     public static void main( String[] args )
     {
+        try {
+            Box box1 = new Box(10, 20, 10);
+            Box box2 = new Box(-3,10, 20);
+        }
+        catch (IncorrectBoxDimensionsException e){
+            System.out.println(e.getMessage());
+        }
+
+        /*
+        try {
+            String str = null;
+
+            System.out.println(str.length());
+        }
+        catch(Exception e){
+            System.out.println(e.getLocalizedMessage());
+            System.out.println(e.getMessage());
+        }
+        */
+
+        /*
         // Создаём таблицы
         String[] suchkaCreate = {"create table jopa (name varchar2(20), color varchar2(30));",
                                  "create table colors(name varchar2, cod varchar2(30));"};
@@ -112,6 +135,8 @@ public class App
                                  "update color set cod='#ffffff';commit;"};
         Document doc3 = new Document();
         doc3.updateDocument(suchkaUpdate);
+
+         */
 
         //System.out.println(fibonachi(25));
 //        Transport samolet = new Transport("Самолет", 2000, 800, 100);
