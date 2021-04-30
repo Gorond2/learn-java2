@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.box.Bol;
 import org.example.box.Box;
 import org.example.box.IncorrectBoxDimensionsException;
 import org.example.transport.Plane;
@@ -97,6 +98,13 @@ public class App
 
     public static void main( String[] args )
     {
+
+        Bol<Integer> boll1 = new Bol<>(10);
+        System.out.println(boll1.getRadius());
+
+        Bol<String> boll2 = new Bol<>("90");
+        System.out.println(boll2.getRadius());
+        /*
         try {
             Box box1 = new Box(10, 20, 10);
             Box box2 = new Box(-3,10, 20);
@@ -104,6 +112,7 @@ public class App
         catch (IncorrectBoxDimensionsException e){
             System.out.println(e.getMessage());
         }
+        */
 
         /*
         try {
